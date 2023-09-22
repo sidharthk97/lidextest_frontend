@@ -1,0 +1,30 @@
+thead tr{
+    border-bottom: 1px solid black;
+   
+}
+
+.container{
+    background-color: rgb(0, 0, 0, 0.7);
+    color: white;
+}
+
+
+.stats_tr{
+    
+    font-size: large;
+
+}
+
+#pie{
+    float :right;
+    font-size: 20px ;
+    background-color: lightskyblue;
+    height: 40px;
+    color: black;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 15px;
+    padding: 4px;
+    margin-right: 50px;
+
+}

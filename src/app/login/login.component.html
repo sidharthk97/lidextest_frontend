@@ -1,0 +1,45 @@
+
+<app-navbar></app-navbar>
+
+<div class="vh-100 py-3" id="login_container">
+    <h3 class="text-center pt-2" style="color: white;">Employee Leave Application System</h3>
+    <div class="container py-4" style="height:400px">
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col col-xl-10">
+          <div class="card" style="border-radius: 1rem;height:450px;">
+            <div class="row g-0">
+              <div class="col-md-6 col-lg-5 d-none d-md-block">
+                <img src="/assets/login_card.jpg"
+                  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem; height:450px;" />
+              </div>
+              <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                <div class="card-body p-4 p-lg-5 text-black">
+                    <h3  class="text py-4">Log In</h3>
+                    <form  method="POST" ngNativeValidate>
+                                         
+                    <div class="form-group">
+                      <label for="user_id">user ID</label>
+                      <input type="text" [(ngModel)]="user_id" required class="form-control form-control-sm mt-3" id="user_id"
+                        aria-describedby="useridHelp" name="user_id" >
+                    </div>
+                    <div class="form-group">
+                      <label for="password">Password</label>
+                      <a routerLink="" style="float:right;font-size:12px;">Forgot password?</a>
+                      <input type="password" [(ngModel)]="password"  name ="password" required class="form-control form-control-sm mt-3" id="password">
+                        <span style="color: red;">{{ error_msg }}</span>
+                    </div>
+                    <button type="button" (click)="signin()" class="btn btn-primary btn-block mt-5">Submit</button>
+                                        
+                    <div class="sign-up mt-3">
+                      Don't have an Employee account? <a routerLink="/signup">Create One</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<app-footer></app-footer>

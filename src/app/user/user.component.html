@@ -1,0 +1,90 @@
+
+<app-navbar-logged></app-navbar-logged>
+
+<section id="user_page" >
+    <div class="container " >
+        <h1 >Create Leave Application :</h1>
+        <div class="card">           
+            <form>       
+                <div class="form-group mt-4 ms-4">
+                    <div>
+                        <label style="display: inline-block;">Name : </label>
+                        <label style="display: inline-block;text-transform: uppercase;margin-left: 10px;">
+                            {{ name }}
+                        </label>
+                    </div>
+                    
+                </div>
+                
+                <div class="form-group mt-2 ms-4">
+                    <label >Reason for Leave</label>
+                    <input type="text" [(ngModel)]="reason" [ngModelOptions]="{standalone: true}" class="form-control" id="reason" name="reason" placeholder="Enter Reason">
+                </div>
+
+                <div class="form-group mt-2 ms-4">
+                    <label >From Date</label>
+                    <input type="text" [(ngModel)]="from_date" [ngModelOptions]="{standalone: true}" class="form-control" id="from_date" name="from_date" placeholder="Leave starts from:(YYYY-MM-DD)">
+                </div>
+                <div class="form-group mt-2 ms-4">
+                    <label >To Date</label>
+                    <input type="text" [(ngModel)]="to_date" [ngModelOptions]="{standalone: true}" class="form-control" id="to_date" name="to_date" placeholder="Leave ends on:(YYYY-MM-DD)">
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-4 mb-4 ms-4" (click)="saveRecords()" >Save</button> &nbsp;
+                <button type="submit" class="btn btn-warning mt-4 mb-4 " (click)="UpdateRecords()" >Update</button>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <div class="container mt-4 py-3" >
+            <h1><span>Leave Application List :</span><span id="pie" >Pie-Chart given below</span></h1> 
+            <table class="table">
+                <thead>     
+                <tr>
+                    <th class="col">Name</th>
+                    <th class="col">reason</th>
+                    <th class="col">from date</th>
+                    <th class="col">to date</th>
+                    <th class="col">Status</th>
+                    <th class="col">Options</th>
+                    
+                </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let leave of leaveArray">
+                
+                        <td>{{leave.name}}</td>
+                        <td>{{leave.reason }}</td>
+                        <td>{{leave.from_date }}</td>
+                        <td>{{leave.to_date }}</td>
+                        <td>{{leave.status }}</td>
+            
+                        <td>
+                            <button type="button" class="btn btn-success me-2" (click)="setUpdate(leave)">Edit</button>                     
+                            <button type="button" class="btn btn-danger me-2" (click)="setDelete(leave)">Delete</button>
+                        </td>
+                    </tr>            
+                </tbody>
+            </table>      
+        </div>
+    </div>
+    <div class="container mt-4 py-3" >
+        <h1>Leave Application Statistics :</h1>
+        <table class="table" >
+            <tr class="stats_tr">
+                <td>No. of Approved Leaves taken : {{ approve_count }}</td>
+                <td>No. of Leave applications Rejected : {{ reject_count }}</td>
+            </tr>
+            <tr class="stats_tr">
+                <td>No. of Leave applications Pending : {{ pending_count }}</td>
+                <td>Total No. of Leaves Applied: {{ total_leave_count }}</td>
+            </tr>
+        </table>
+        <app-user-piechart></app-user-piechart>
+        
+        
+    </div>
+
+</section>
+<app-footer></app-footer>

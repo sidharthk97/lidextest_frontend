@@ -1,0 +1,31 @@
+#user_page{
+    background-color: #539ff7; 
+    background-image: url('/assets/bg3.jpg');
+    background-size: cover;
+    height: auto; 
+    min-height: 600px;
+}
+.container{
+    background-color: rgb(0, 0, 0, 0.7);
+    color: white;
+}
+
+.stats_tr{
+    
+    font-size: large;
+
+}
+
+#pie{
+    float :right;
+    font-size: 20px ;
+    background-color: lightskyblue;
+    height: 40px;
+    color: black;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 15px;
+    padding: 4px;
+    margin-right: 50px;
+
+}
